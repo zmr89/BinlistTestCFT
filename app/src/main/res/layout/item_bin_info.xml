@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp"
+    android:elevation="8dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewBIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="BIN: 42743200"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewScheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="SCHEME/NETWORK: Visa"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewBrand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="BRAND: Traditional"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewLength"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="CARD NUMBER LENGTH: 16"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewLuhn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="CARD NUMBER LUHN: Yes"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="TYPE: Debit"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewPrepaid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="PREPAID: No"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewCountryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="COUNTRY NAME: Russian Federation"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewCountryCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="COUNTRY CODE: Ru"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewCountryCoordinates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="COUNTRY COORDINATES: latitude 60, longitude 100"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewBankName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="BANK NAME: SBERBANK OF RUSSIA"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewBankWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="BANK WEBSITE: www.sbrf.ru"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:id="@+id/textViewBankPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="BANK PHONE: +7 (495) 500 5550"
+            android:layout_margin="4dp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
