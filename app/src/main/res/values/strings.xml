@@ -3,4 +3,6 @@
     <string name="enter_the_first_8_digits_of_a_card_number">Enter the first 8 digits of a card number:</string>
     <string name="bin_card">BIN card</string>
     <string name="enter">Enter</string>
+    <string name="error">Error. Please enter the first 8 digits of a card number</string>
+    <string name="history">History</string>
 </resources>
