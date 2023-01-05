@@ -4,5 +4,6 @@
     <string name="bin_card">BIN card</string>
     <string name="enter">Enter</string>
     <string name="error">Error. Please enter the first 8 digits of a card number</string>
+    <string name="error_get_bin">BIN not found</string>
     <string name="history">History</string>
 </resources>

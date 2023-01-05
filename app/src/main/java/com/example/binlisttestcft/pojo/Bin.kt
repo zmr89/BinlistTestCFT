@@ -1,4 +1,4 @@
-package com.example.binlisttestcft
+package com.example.binlisttestcft.pojo
 
 import androidx.room.Embedded
 import androidx.room.Entity

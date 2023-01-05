@@ -1,4 +1,4 @@
-package com.example.binlisttestcft
+package com.example.binlisttestcft.pojo
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

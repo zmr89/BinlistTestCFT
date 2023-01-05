@@ -1,4 +1,4 @@
-package com.example.binlisttestcft
+package com.example.binlisttestcft.api
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
