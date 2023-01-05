@@ -1,11 +1,11 @@
-package com.example.binlisttestcft
+package com.example.binlisttestcft.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.example.binlisttestcft.pojo.Bin
 import io.reactivex.rxjava3.core.Completable
-import io.reactivex.rxjava3.core.Single
 
 @Dao
 interface BinDAO {

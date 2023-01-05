@@ -26,6 +26,13 @@ class MainActivity : AppCompatActivity() {
                 bin -> val intent = DetailActivity.newIntent(this, bin, binNumber)
             startActivity(intent)
         })
+        mainViewModel.isErrorGetBinLD.observe(this, Observer {
+            if (it) {
+                Toast.makeText(this@MainActivity,
+                    getString(R.string.error_get_bin), Toast.LENGTH_LONG).show()
+            }
+        })
+
         buttonEnter.setOnClickListener { it ->
             binNumber= editTextNumber.text.toString().trim()
             if (binNumber.length == 8 && binNumber.isDigitsOnly()){

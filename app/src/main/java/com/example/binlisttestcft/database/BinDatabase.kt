@@ -1,10 +1,10 @@
-package com.example.binlisttestcft
+package com.example.binlisttestcft.database
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.binlisttestcft.pojo.Bin
 
 @Database(entities = [Bin::class], version = 1, exportSchema = false)
 abstract class BinDatabase : RoomDatabase() {

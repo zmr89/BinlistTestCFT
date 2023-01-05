@@ -2,12 +2,14 @@ package com.example.binlisttestcft
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
-import androidx.lifecycle.Observer
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.example.binlisttestcft.pojo.Bin
+import com.example.binlisttestcft.pojo.BinResponse
 
 
 class DetailActivity : AppCompatActivity() {
@@ -62,6 +64,30 @@ class DetailActivity : AppCompatActivity() {
 
         val detailViewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
         detailViewModel.insertBinDB(Bin(binNumber = binNumber, binResponse = binResponse))
+
+        textViewBankWebsiteDetail.setOnClickListener {
+            val uriLink = Uri.parse("http://" + binResponse.bank?.url)
+            val openLinkIntent = Intent(Intent.ACTION_VIEW, uriLink)
+            if (openLinkIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(openLinkIntent)
+            }
+        }
+
+        textViewBankPhoneDetail.setOnClickListener {
+            val uriCall = Uri.parse("tel:" + binResponse.bank?.phone)
+            val callIntent = Intent(Intent.ACTION_DIAL, uriCall)
+            if (callIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(callIntent)
+            }
+        }
+
+        textViewCountryCoordinatesDetail.setOnClickListener {
+            val uriMap = Uri.parse("geo:${binResponse.country?.latitude},${binResponse.country?.longitude}")
+            val mapIntent = Intent(Intent.ACTION_VIEW, uriMap)
+            mapIntent.setPackage("com.google.android.apps.maps")
+            startActivity(mapIntent)
+        }
+
     }
 
 

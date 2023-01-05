@@ -1,10 +1,12 @@
-package com.example.binlisttestcft
+package com.example.binlisttestcft.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.binlisttestcft.pojo.Bin
+import com.example.binlisttestcft.R
 
 class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
     var listBins = listOf<Bin>()
@@ -12,6 +14,10 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
         field = value
         notifyDataSetChanged()
     }
+
+    var onClickBinListener: OnClickBinListener? = null
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
        val view =  LayoutInflater.from(parent.context).inflate(R.layout.item_bin_info, parent, false)
@@ -34,6 +40,11 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
         holder.textViewBankName.text = "BANK NAME: " + bin.binResponse?.bank?.bankName
         holder.textViewBankWebsite.text = "BANK WEBSITE: " + bin.binResponse?.bank?.url
         holder.textViewBankPhone.text = "BANK PHONE: " + bin.binResponse?.bank?.phone
+
+
+        holder.itemView.setOnClickListener({
+            onClickBinListener?.onClickBin(bin)
+        })
     }
 
     override fun getItemCount(): Int {
@@ -54,6 +65,10 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
         val textViewBankName: TextView = itemView.findViewById(R.id.textViewBankName)
         val textViewBankWebsite: TextView = itemView.findViewById(R.id.textViewBankWebsite)
         val textViewBankPhone: TextView = itemView.findViewById(R.id.textViewBankPhone)
+    }
+
+    interface OnClickBinListener {
+        fun onClickBin(bin: Bin)
     }
 
 }
