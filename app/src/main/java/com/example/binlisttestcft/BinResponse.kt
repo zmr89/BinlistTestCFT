@@ -1,10 +1,12 @@
 package com.example.binlisttestcft
 
+import androidx.room.Embedded
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 
 class BinResponse: Serializable {
+    @Embedded
     @SerializedName("number")
     var number: Number? = null
 
@@ -20,9 +22,11 @@ class BinResponse: Serializable {
     @SerializedName("prepaid")
     var prepaid: Boolean = false
 
+    @Embedded
     @SerializedName("country")
     var country: Country? = null
 
+    @Embedded
     @SerializedName("bank")
     var bank: Bank? = null
 
