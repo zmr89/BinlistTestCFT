@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 
 
 class DetailActivity : AppCompatActivity() {
@@ -58,7 +60,17 @@ class DetailActivity : AppCompatActivity() {
         textViewBankWebsiteDetail.text = "BANK WEBSITE: " + binResponse.bank?.url
         textViewBankPhoneDetail.text = "BANK PHONE: " + binResponse.bank?.phone
 
+        val detailViewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+//        detailViewModel.isSuccessInsertLD.observe(this, Observer {
+//
+//        })
+        detailViewModel.insertBinDB(Bin(binNumber = binNumber, binResponse = binResponse))
+
     }
+
+
+
+
 
 
 
