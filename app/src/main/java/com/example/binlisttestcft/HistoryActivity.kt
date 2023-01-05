@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class HistoryActivity : AppCompatActivity() {
 
@@ -23,8 +25,15 @@ class HistoryActivity : AppCompatActivity() {
 
         val historyViewModel = ViewModelProvider(this).get(HistoryViewModel::class.java)
         historyViewModel.getAllBinDB().observe(this, Observer {
+            val recyclerView: RecyclerView = findViewById(R.id.recyclerViewHistory)
+            val historyAdapter = HistoryAdapter()
+            historyAdapter.listBins = it
+            recyclerView.adapter = historyAdapter
             Log.d("HistoryActivity", it.toString())
         })
+
+
+
 
     }
 

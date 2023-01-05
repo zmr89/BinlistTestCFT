@@ -13,11 +13,6 @@ interface BinDAO {
     @Query("SELECT * FROM history_bin")
     fun getAllBinDB(): LiveData<List<Bin>>
 
-    @Query("SELECT * FROM history_bin WHERE id == :idBin")
-    fun getBinDB(idBin: Int): LiveData<Bin>
-
     @Insert
     fun insertBinDB(bin: Bin): Completable
-
-
 }
